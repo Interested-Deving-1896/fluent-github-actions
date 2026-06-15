@@ -1,62 +1,75 @@
-# Fluent Github Actions
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# fluent-github-actions
 
-[![deno module](https://shield.deno.dev/x/fluent_github_actions)](https://deno.land/x/fluent_github_actions)
-![deno compatibility](https://shield.deno.dev/deno/^1.34)
-[![](https://img.shields.io/codecov/c/gh/tsirysndr/fluent-github-actions)](https://codecov.io/gh/tsirysndr/fluent-github-actions)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/fluent-github-actions)
 
-Fluent Github Actions is a deno module for generating Github Actions Workflow configuration files easily and fluently.
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-## 🚀 Usage
+## Architecture
 
-```typescript
-import {
-  Workflow,
-  JobSpec,
-} from "https://deno.land/x/fluent_github_actions@v0.2.0/mod.ts";
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-const workflow = new Workflow("Codecov");
+## Install
 
-const push = {
-  branches: ["master"],
-};
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-const test: JobSpec = {
-  "runs-on": "ubuntu-latest",
-  steps: [
-    {
-      uses: "actions/checkout@v2",
-    },
-    {
-      uses: "denolib/setup-deno@v2",
-      with: {
-        "deno-version": "v1.34",
-      },
-    },
-    {
-      name: "Create coverage files",
-      run: "deno test --coverage=coverage",
-    },
-    {
-      name: "Create coverage report",
-      run: "deno coverage ./coverage --lcov > coverage.lcov",
-    },
-    {
-      name: "Collect coverage",
-      uses: "codecov/codecov-action@v3",
-      env: {
-        CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}",
-      },
-      with: {
-        file: "./coverage.lcov",
-      },
-    },
-  ],
-};
+```bash
+git clone https://github.com/Interested-Deving-1896/fluent-github-actions.git
+cd fluent-github-actions
+```
 
-workflow.on({ push }).jobs({ test });
+## Usage
 
-console.log(workflow.toString());
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-workflow.save("./.github/workflows/codecov.yml");
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/fluent-github-actions`](https://github.com/Interested-Deving-1896/fluent-github-actions) and mirrored through:
 
 ```
+Interested-Deving-1896/fluent-github-actions  ──►  OpenOS-Project-OSP/fluent-github-actions  ──►  OpenOS-Project-Ecosystem-OOC/fluent-github-actions
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## License
+
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/fluent-github-actions/blob/master/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
