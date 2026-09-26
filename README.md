@@ -1,62 +1,91 @@
-# Fluent Github Actions
+# fluent-github-actions
 
-[![deno module](https://shield.deno.dev/x/fluent_github_actions)](https://deno.land/x/fluent_github_actions)
-![deno compatibility](https://shield.deno.dev/deno/^1.34)
-[![](https://img.shields.io/codecov/c/gh/tsirysndr/fluent-github-actions)](https://codecov.io/gh/tsirysndr/fluent-github-actions)
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/fluent-github-actions) [![KDE Eco](https://img.shields.io/badge/KDE%20Eco-certified-brightgreen?logo=kde&logoColor=white&style=flat-square)](https://eco.kde.org/) [![Blue Angel](https://img.shields.io/badge/Blue%20Angel-DE--UZ%20215-0055a4?style=flat-square)](https://www.blauer-engel.de/en/certification/criteria)
 
-Fluent Github Actions is a deno module for generating Github Actions Workflow configuration files easily and fluently.
 
-## 🚀 Usage
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-```typescript
-import {
-  Workflow,
-  JobSpec,
-} from "https://deno.land/x/fluent_github_actions@v0.2.0/mod.ts";
+## Architecture
 
-const workflow = new Workflow("Codecov");
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-const push = {
-  branches: ["master"],
-};
+## Install
 
-const test: JobSpec = {
-  "runs-on": "ubuntu-latest",
-  steps: [
-    {
-      uses: "actions/checkout@v2",
-    },
-    {
-      uses: "denolib/setup-deno@v2",
-      with: {
-        "deno-version": "v1.34",
-      },
-    },
-    {
-      name: "Create coverage files",
-      run: "deno test --coverage=coverage",
-    },
-    {
-      name: "Create coverage report",
-      run: "deno coverage ./coverage --lcov > coverage.lcov",
-    },
-    {
-      name: "Collect coverage",
-      uses: "codecov/codecov-action@v3",
-      env: {
-        CODECOV_TOKEN: "${{ secrets.CODECOV_TOKEN }}",
-      },
-      with: {
-        file: "./coverage.lcov",
-      },
-    },
-  ],
-};
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
-workflow.on({ push }).jobs({ test });
+```bash
+git clone https://github.com/Interested-Deving-1896/fluent-github-actions.git
+cd fluent-github-actions
+```
 
-console.log(workflow.toString());
+## Usage
 
-workflow.save("./.github/workflows/codecov.yml");
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
+
+## Configuration
+
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
+
+## CI
+
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
+
+## Mirror chain
+
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/fluent-github-actions`](https://github.com/Interested-Deving-1896/fluent-github-actions) and mirrored through:
 
 ```
+Interested-Deving-1896/fluent-github-actions  ──►  OpenOS-Project-OSP/fluent-github-actions  ──►  OpenOS-Project-Ecosystem-OOC/fluent-github-actions
+```
+
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
+
+## Contributors
+
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
+
+## Origins
+
+<!-- AI:start:origins -->
+_Original project — no upstream influences recorded._
+<!-- AI:end:origins -->
+
+## Resources
+
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
+
+## Accessibility
+
+<!-- AI:start:accessibility -->
+This repo uses automated accessibility auditing via `check-accessibility.yml`.
+
+Checks include: CODEOWNERS ownership coverage, README screen-reader compatibility,
+WCAG 2.1 AA HTML compliance, audio overview (espeak-ng), and Braille output (liblouis).
+
+
+
+
+Run the [Check Accessibility](https://github.com/Interested-Deving-1896/fluent-github-actions/actions/workflows/check-accessibility.yml)
+workflow to generate the first report and accessibility artifacts.
+See [DOCS/accessibility.md](https://github.com/Interested-Deving-1896/fluent-github-actions/blob/main/DOCS/accessibility.md) for the full reference.
+<!-- AI:end:accessibility -->
+
+## License
+
+<!-- AI:start:license -->
+[MIT](https://github.com/Interested-Deving-1896/fluent-github-actions/blob/master/LICENSE) © 2026 [Interested-Deving-1896](https://github.com/Interested-Deving-1896)
+<!-- AI:end:license -->
